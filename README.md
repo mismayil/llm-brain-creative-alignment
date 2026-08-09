@@ -50,7 +50,7 @@ Model scripts live under [src/cadabra/model](src/cadabra/model) and correspondin
 
 ### Preparing LM eval data
 ```sh
-./experiments/templeton_aut/prepare_task_data.sh
+./experiments/templeton_aut/prepare_lm_eval_data.sh
 ```
 
 ### Model inference
@@ -80,22 +80,22 @@ The script by default will use the `metadata.config.model_path` to load the mode
 Brain alignment config files can be found [here](src/cadabra/alignment/configs). [Default config](src/cadabra/alignment/configs/brain_alignment.yaml) contains reasonable default values and can be modified in CLI easily. Alignment can be computed using the [brain_alignment.py](src/cadabra/alignment/brain_alignment.py) script. Here is an example of a single alignment run:
 ```sh
 python -m cadabra.alignment.brain_alignment \
-    alignment="ridge" \
+    alignment="rsa_per_subject" \
     model_args.model_datapath="/path/to/model/activations/data/json" \
     brain_args.brain_datapath="experiments/templeton_aut/data/brain/yeo_dmn_brain_aut_beta_map_data/first_level_glm_results_20260117_204028_dt_create.json" \
     brain_args.noise_ceiling_path="experiments/templeton_aut/data/brain/yeo_dmn_brain_aut_beta_map_data/noise_ceilings/noise_ceiling_per_voxel_n10_20260117_224707.json" \
     model_args.model_data_sampling="time:-1::layer:1:"
 ``` 
 
-This command computes the ridge regression alignment between the last-token (-1) activations of all layers of the model (except the first layer which is the embedding layer) and the beta maps of the DMN region of the brain and reports both raw and noise ceiling adjusted results. The command also saves the results to a local path and reports to wandb (for wandb, make sure to configure wandb API key by either exporting it or setting in the top-level .env file). 
+This command computes the RSA alignment (per subject) between the last-token (-1) activations of all layers of the model (except the first layer which is the embedding layer) and the beta maps of the DMN region of the brain and reports both raw and noise ceiling adjusted results. The command also saves the results to a local path and reports to wandb (for wandb, make sure to configure wandb API key by either exporting it or setting in the top-level .env file). 
 
 Multiple alignment runs can be easily done by specifying `--multi-run` option and setting multiple setting values using comma like below:
 ```sh
 python -m cadabra.alignment.brain_alignment \
-    alignment="ridge" \
+    alignment="rsa_per_subject" \
     model_args.model_datapath="path/to/model/data1","path/to/model/data2" \
     brain_args.brain_datapath="experiments/templeton_aut/data/brain/yeo_dmn_brain_aut_beta_map_data/first_level_glm_results_20260117_204028_dt_create.json" \
     brain_args.noise_ceiling_path="experiments/templeton_aut/data/brain/yeo_dmn_brain_aut_beta_map_data/noise_ceilings/noise_ceiling_per_voxel_n10_20260117_224707.json" \
     model_args.model_data_sampling="time:-1::layer:1:","time:mean::layer:1:"
 ```
-Here we have specified multiple model data files and multiple model data sampling options (last-token and mean-token). Check out [aut_brain_alignment.sh](experiments/templeton_aut/aut_brain_alignment.sh) for more examples.
+Here we have specified multiple model data files and multiple model data sampling options (last-token and mean-token). Check out [aut_brain_alignment.sh](experiments/templeton_aut/aut_rsa_per_subject/generate_alignment_scripts.sh) for how to generate alignment scripts on the fly.
