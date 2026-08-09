@@ -1,0 +1,17 @@
+defaults:
+  - gen_args: greedy
+  - _self_
+
+model_path: null
+data_path: null
+output_dir: null
+batch_size: 16
+resume: false
+model_from_untrained: false
+seed: 42
+force_response: false
+
+ablation:
+  type: null
+  path: null
+  ignore_first_layer: true

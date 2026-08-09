@@ -1,0 +1,7 @@
+alignment_method: "linear"
+
+alignment_args:
+  n_splits: 5
+  random_seed: 42
+  ridge: false
+  regression_target: null

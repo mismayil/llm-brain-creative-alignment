@@ -1,0 +1,8 @@
+defaults:
+  - ridge
+  - _self_
+
+alignment_method: "linear"
+
+alignment_args:
+  regression_target: "mean_voxel"

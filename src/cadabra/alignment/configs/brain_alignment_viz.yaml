@@ -1,0 +1,16 @@
+alignment_method: rsa
+nc_threshold: 0
+brain_network: ".*yeo_dmn.*"
+model_network: layers
+model_data_sampling: "time:mean::layer:1:"
+activation_mode: prompt
+dataset: ".*templeton_aut_create.*"
+network_pooling: ".*pmean.*"
+regression_target: null
+viz_name: alignment_by_model_size
+metrics: 
+  - "noise_ceiling_adjusted.best_layer.median_pred"
+  - "noise_ceiling_adjusted.best_layer.median_abs_dev_pred"
+wandb_project: cadabra-alignments
+output_dir: experiments/templeton_aut/figures/alignment_viz
+output_format: pdf

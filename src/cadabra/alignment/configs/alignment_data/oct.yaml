@@ -1,0 +1,393 @@
+brain_data:
+  
+  - name: yeo_dmn
+    datapath: "${brain_dir}/yeo_dmn_brain_oct_beta_map_data/first_level_glm_results_20260326_102919_dt_object.json"
+    noise_ceilings:
+      - name: rsa_per_subject
+        datapath: "${brain_dir}/yeo_dmn_brain_oct_beta_map_data/noise_ceilings/noise_ceiling_rsa_per_subject_n10_20260326_132811.json"
+  
+  - name: yeo_fp
+    datapath: "${brain_dir}/yeo_fp_brain_oct_beta_map_data/first_level_glm_results_20260326_102919_dt_object.json"
+    noise_ceilings:
+      - name: rsa_per_subject
+        datapath: "${brain_dir}/yeo_fp_brain_oct_beta_map_data/noise_ceilings/noise_ceiling_rsa_per_subject_n10_20260326_132818.json"
+  
+  - name: yeo_dmn_aut
+    datapath: "${brain_dir}/yeo_dmn_brain_aut_beta_map_data/first_level_glm_results_20260117_204028_dt_create_with_ratings.json"
+    noise_ceilings:
+      - name: rsa_per_subject
+        datapath: "${brain_dir}/yeo_dmn_brain_aut_beta_map_data/noise_ceilings/noise_ceiling_rsa_per_subject_n10_20260205_133213.json"
+  
+  - name: yeo_fp_aut
+    datapath: "${brain_dir}/yeo_fp_brain_aut_beta_map_data/first_level_glm_results_20260117_204028_dt_create_with_ratings.json"
+    noise_ceilings:
+      - name: rsa_per_subject
+        datapath: "${brain_dir}/yeo_fp_brain_aut_beta_map_data/noise_ceilings/noise_ceiling_rsa_per_subject_n10_20260206_183407.json"
+
+########################################################################################################################
+model_data:
+
+  - name: llama-3.1-8b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/llama-3.1-8b-instruct/20251216_195707/activations/20260315_173243/templeton_aut_object_eval_data_llama-3.1-8b-instruct_20251216_195707_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/llama-3.1-8b-instruct/20251216_195707/activations/20251216_200836/templeton_aut_object_eval_data_llama-3.1-8b-instruct_20251216_195707_with_activations.json"
+      - name: human_resp
+        datapath: ""
+      - name: short_prompt
+        datapath: "${model_dir}/oct/llama-3.1-8b-instruct/20260326_133627/activations/20260326_135349/templeton_aut_object_short_eval_data_llama-3.1-8b-instruct_20260326_133627_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/llama-3.1-8b-instruct/20260326_133627/activations/20260326_135045/templeton_aut_object_short_eval_data_llama-3.1-8b-instruct_20260326_133627_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/llama-3.1-8b-instruct/20260327_104747/localization_20260327_104747_r100-100_plast-token_u1351_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/llama-3.1-8b-instruct/20260327_104850/localization_20260327_104850_r100-100_pmean_u1351_pct1.json"
+
+  - name: crpo-llama-3.1-8b-instruct-cre
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/crpo-llama-3.1-8b-instruct-cre/20251216_203018/activations/20260315_173436/templeton_aut_object_eval_data_crpo-llama-3.1-8b-instruct-cre_20251216_203018_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/crpo-llama-3.1-8b-instruct-cre/20251216_203018/activations/20251216_205915/templeton_aut_object_eval_data_crpo-llama-3.1-8b-instruct-cre_20251216_203018_with_activations.json"
+      - name: human_resp
+        datapath: ""
+      - name: short_prompt
+        datapath: "${model_dir}/oct/crpo-llama-3.1-8b-instruct-cre/20260326_133808/activations/20260326_135444/templeton_aut_object_short_eval_data_crpo-llama-3.1-8b-instruct-cre_20260326_133808_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/crpo-llama-3.1-8b-instruct-cre/20260326_133808/activations/20260326_135225/templeton_aut_object_short_eval_data_crpo-llama-3.1-8b-instruct-cre_20260326_133808_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/crpo-llama-3.1-8b-instruct-cre/20260327_104904/localization_20260327_104904_r100-100_plast-token_u1351_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/crpo-llama-3.1-8b-instruct-cre/20260327_105049/localization_20260327_105049_r100-100_pmean_u1353_pct1.json"
+
+  - name: gemma-3-270m-it
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/gemma-3-270m-it/20260315_161236/activations/20260315_192217/templeton_aut_object_eval_data_gemma-3-270m-it_20260315_161236_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/gemma-3-270m-it/20260315_161236/activations/20260315_182105/templeton_aut_object_eval_data_gemma-3-270m-it_20260315_161236_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/gemma-3-270m-it/20260316_163539/activations/20260317_111017/templeton_aut_object_short_eval_data_gemma-3-270m-it_20260316_163539_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/gemma-3-270m-it/20260316_163539/activations/20260317_104944/templeton_aut_object_short_eval_data_gemma-3-270m-it_20260316_163539_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/gemma-3-270m-it/20260327_105104/localization_20260327_105104_r100-100_plast-token_u121_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/gemma-3-270m-it/20260327_105123/localization_20260327_105123_r100-100_pmean_u121_pct1.json"
+
+  - name: gemma-3-1b-it
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/gemma-3-1b-it/20260315_161804/activations/20260315_192251/templeton_aut_object_eval_data_gemma-3-1b-it_20260315_161804_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/gemma-3-1b-it/20260315_161804/activations/20260315_182409/templeton_aut_object_eval_data_gemma-3-1b-it_20260315_161804_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/gemma-3-1b-it/20260316_164110/activations/20260317_111047/templeton_aut_object_short_eval_data_gemma-3-1b-it_20260316_164110_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/gemma-3-1b-it/20260316_164110/activations/20260317_105142/templeton_aut_object_short_eval_data_gemma-3-1b-it_20260316_164110_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/gemma-3-1b-it/20260327_105132/localization_20260327_105132_r100-100_plast-token_u311_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/gemma-3-1b-it/20260327_105207/localization_20260327_105207_r100-100_pmean_u311_pct1.json"
+
+  - name: gemma-3-4b-it
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/gemma-3-4b-it/20260315_162545/activations/20260315_192342/templeton_aut_object_eval_data_gemma-3-4b-it_20260315_162545_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/gemma-3-4b-it/20260315_162545/activations/20260315_183140/templeton_aut_object_eval_data_gemma-3-4b-it_20260315_162545_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/gemma-3-4b-it/20260316_164908/activations/20260317_111130/templeton_aut_object_short_eval_data_gemma-3-4b-it_20260316_164908_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/gemma-3-4b-it/20260316_164908/activations/20260317_105529/templeton_aut_object_short_eval_data_gemma-3-4b-it_20260316_164908_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/gemma-3-4b-it/20260327_105218/localization_20260327_105218_r100-100_plast-token_u896_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/gemma-3-4b-it/20260327_105334/localization_20260327_105334_r100-100_pmean_u896_pct1.json"
+
+  - name: gemma-3-12b-it
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/gemma-3-12b-it/20260315_163555/activations/20260315_192515/templeton_aut_object_eval_data_gemma-3-12b-it_20260315_163555_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/gemma-3-12b-it/20260315_163555/activations/20260315_184758/templeton_aut_object_eval_data_gemma-3-12b-it_20260315_163555_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/gemma-3-12b-it/20260316_165927/activations/20260317_111237/templeton_aut_object_short_eval_data_gemma-3-12b-it_20260316_165927_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/gemma-3-12b-it/20260316_165927/activations/20260317_105945/templeton_aut_object_short_eval_data_gemma-3-12b-it_20260316_165927_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/gemma-3-12b-it/20260327_105349/localization_20260327_105349_r100-100_plast-token_u1881_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/gemma-3-12b-it/20260327_105617/localization_20260327_105617_r100-100_pmean_u1881_pct1.json"
+
+  - name: gemma-3-27b-it
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/gemma-3-27b-it/20260315_165046/activations/20260315_192838/templeton_aut_object_eval_data_gemma-3-27b-it_20260315_165046_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/gemma-3-27b-it/20260315_165046/activations/20260316_131607/templeton_aut_object_eval_data_gemma-3-27b-it_20260315_165046_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/gemma-3-27b-it/20260316_171436/activations/20260317_111426/templeton_aut_object_short_eval_data_gemma-3-27b-it_20260316_171436_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/gemma-3-27b-it/20260316_171436/activations/20260317_110536/templeton_aut_object_short_eval_data_gemma-3-27b-it_20260316_171436_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/gemma-3-27b-it/20260327_105641/localization_20260327_105641_r100-100_plast-token_u3389_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/gemma-3-27b-it/20260327_110045/localization_20260327_110045_r100-100_pmean_u3388_pct1.json"
+
+  - name: llama-3.2-1b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/llama-3.2-1b-instruct/20260315_171134/activations/20260315_193022/templeton_aut_object_eval_data_llama-3.2-1b-instruct_20260315_171134_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/llama-3.2-1b-instruct/20260315_171134/activations/20260315_190607/templeton_aut_object_eval_data_llama-3.2-1b-instruct_20260315_171134_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/llama-3.2-1b-instruct/20260316_173525/activations/20260317_111536/templeton_aut_object_short_eval_data_llama-3.2-1b-instruct_20260316_173525_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/llama-3.2-1b-instruct/20260316_173525/activations/20260317_110735/templeton_aut_object_short_eval_data_llama-3.2-1b-instruct_20260316_173525_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/llama-3.2-1b-instruct/20260327_110116/localization_20260327_110116_r100-100_plast-token_u348_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/llama-3.2-1b-instruct/20260327_110142/localization_20260327_110142_r100-100_pmean_u348_pct1.json"
+
+  - name: llama-3.2-3b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/llama-3.2-3b-instruct/20260315_171339/activations/20260315_193135/templeton_aut_object_eval_data_llama-3.2-3b-instruct_20260315_171339_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/llama-3.2-3b-instruct/20260315_171339/activations/20260315_191512/templeton_aut_object_eval_data_llama-3.2-3b-instruct_20260315_171339_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/llama-3.2-3b-instruct/20260316_173558/activations/20260317_111631/templeton_aut_object_short_eval_data_llama-3.2-3b-instruct_20260316_173558_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/llama-3.2-3b-instruct/20260316_173558/activations/20260317_110915/templeton_aut_object_short_eval_data_llama-3.2-3b-instruct_20260316_173558_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/llama-3.2-3b-instruct/20260327_110154/localization_20260327_110154_r100-100_plast-token_u890_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/llama-3.2-3b-instruct/20260327_110254/localization_20260327_110254_r100-100_pmean_u891_pct1.json"
+
+  - name: olmo-3.1-32b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/olmo-3.1-32b-instruct/20260322_143229/activations/20260322_165643/templeton_aut_object_eval_data_olmo-3.1-32b-instruct_20260322_143229_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/olmo-3.1-32b-instruct/20260322_143229/activations/20260322_153037/templeton_aut_object_eval_data_olmo-3.1-32b-instruct_20260322_143229_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/olmo-3.1-32b-instruct/20260322_145319/activations/20260322_165917/templeton_aut_object_short_eval_data_olmo-3.1-32b-instruct_20260322_145319_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/olmo-3.1-32b-instruct/20260322_145319/activations/20260322_154200/templeton_aut_object_short_eval_data_olmo-3.1-32b-instruct_20260322_145319_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/olmo-3.1-32b-instruct/20260327_110312/localization_20260327_110312_r100-100_plast-token_u3331_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/olmo-3.1-32b-instruct/20260327_110620/localization_20260327_110620_r100-100_pmean_u3330_pct1.json"
+
+  - name: llama-3.1-70b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/llama-3.1-70b-instruct/20260322_144137/activations/20260322_170950/templeton_aut_object_eval_data_llama-3.1-70b-instruct_20260322_144137_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/llama-3.1-70b-instruct/20260322_144137/activations/20260322_162531/templeton_aut_object_eval_data_llama-3.1-70b-instruct_20260322_144137_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/llama-3.1-70b-instruct/20260322_145355/activations/20260322_171312/templeton_aut_object_short_eval_data_llama-3.1-70b-instruct_20260322_145355_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/llama-3.1-70b-instruct/20260322_145355/activations/20260322_164747/templeton_aut_object_short_eval_data_llama-3.1-70b-instruct_20260322_145355_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/llama-3.1-70b-instruct/20260327_110657/localization_20260327_110657_r100-100_plast-token_u6636_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/llama-3.1-70b-instruct/20260327_111053/localization_20260327_111053_r100-100_pmean_u6640_pct1.json"
+
+  # - name: mistral-7b-instruct
+  #   datapaths:
+  #     - name: prompt
+  #       datapath: "${model_dir}/oct/mistral-7b-instruct-v0.3/20260325_180525/activations/20260325_183432/templeton_aut_object_eval_data_mistral-7b-instruct-v0.3_20260325_180525_with_activations.json"
+  #     - name: model_resp
+  #       datapath: "${model_dir}/oct/mistral-7b-instruct-v0.3/20260325_180525/activations/20260325_182444/templeton_aut_object_eval_data_mistral-7b-instruct-v0.3_20260325_180525_with_activations.json"
+  #     - name: short_prompt
+  #       datapath: "${model_dir}/oct/mistral-7b-instruct-v0.3/20260325_181042/activations/20260325_183504/templeton_aut_object_short_eval_data_mistral-7b-instruct-v0.3_20260325_181042_with_activations.json"
+  #     - name: short_model_resp
+  #       datapath: "${model_dir}/oct/mistral-7b-instruct-v0.3/20260325_181042/activations/20260325_182949/templeton_aut_object_short_eval_data_mistral-7b-instruct-v0.3_20260325_181042_with_activations.json"
+  #   networks:
+  #     - name: plast_pct1
+  #       datapath: "${model_dir}/localizations/mistral-7b-instruct-v0.3/20260327_111126/localization_20260327_111126_r100-100_plast-token_u1351_pct1.json"
+  #     - name: pmean_pct1
+  #       datapath: "${model_dir}/localizations/mistral-7b-instruct-v0.3/20260327_111237/localization_20260327_111237_r100-100_pmean_u1352_pct1.json"
+
+  # - name: crpo-mistral-7b-instruct-cre
+  #   datapaths:
+  #     - name: prompt
+  #       datapath: "${model_dir}/oct/crpo-mistral-7b-instruct-cre/20260325_180925/activations/20260325_183641/templeton_aut_object_eval_data_crpo-mistral-7b-instruct-cre_20260325_180925_with_activations.json"
+  #     - name: model_resp
+  #       datapath: "${model_dir}/oct/crpo-mistral-7b-instruct-cre/20260325_180925/activations/20260325_183213/templeton_aut_object_eval_data_crpo-mistral-7b-instruct-cre_20260325_180925_with_activations.json"
+  #     - name: short_prompt
+  #       datapath: "${model_dir}/oct/crpo-mistral-7b-instruct-cre/20260325_181110/activations/20260325_183715/templeton_aut_object_short_eval_data_crpo-mistral-7b-instruct-cre_20260325_181110_with_activations.json"
+  #     - name: short_model_resp
+  #       datapath: "${model_dir}/oct/crpo-mistral-7b-instruct-cre/20260325_181110/activations/20260325_183259/templeton_aut_object_short_eval_data_crpo-mistral-7b-instruct-cre_20260325_181110_with_activations.json"
+  #   networks:
+  #     - name: plast_pct1
+  #       datapath: "${model_dir}/localizations/crpo-mistral-7b-instruct-cre/20260327_111256/localization_20260327_111256_r100-100_plast-token_u1351_pct1.json"
+  #     - name: pmean_pct1
+  #       datapath: "${model_dir}/localizations/crpo-mistral-7b-instruct-cre/20260327_111312/localization_20260327_111312_r100-100_pmean_u1351_pct1.json"
+
+  - name: llama-3.1-8b
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/llama-3.1-8b/20260327_195036/activations/20260328_100859/templeton_aut_object_eval_data_llama-3.1-8b_20260327_195036_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/llama-3.1-8b/20260327_195036/activations/20260327_210611/templeton_aut_object_eval_data_llama-3.1-8b_20260327_195036_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/llama-3.1-8b/20260327_201956/activations/20260328_100930/templeton_aut_object_short_eval_data_llama-3.1-8b_20260327_201956_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/llama-3.1-8b/20260327_201956/activations/20260327_211857/templeton_aut_object_short_eval_data_llama-3.1-8b_20260327_201956_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/llama-3.1-8b-instruct/20260327_104747/localization_20260327_104747_r100-100_plast-token_u1351_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/llama-3.1-8b-instruct/20260327_104850/localization_20260327_104850_r100-100_pmean_u1351_pct1.json"
+
+  - name: llama-3.1-minitaur-8b
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/llama-3.1-minitaur-8b/20260327_195754/activations/20260328_101059/templeton_aut_object_eval_data_llama-3.1-minitaur-8b_20260327_195754_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/llama-3.1-minitaur-8b/20260327_195754/activations/20260327_215012/templeton_aut_object_eval_data_llama-3.1-minitaur-8b_20260327_195754_with_activations.json"
+      - name: short_prompt
+        datapath: "${model_dir}/oct/llama-3.1-minitaur-8b/20260327_202650/activations/20260328_101129/templeton_aut_object_short_eval_data_llama-3.1-minitaur-8b_20260327_202650_with_activations.json"
+      - name: short_model_resp
+        datapath: "${model_dir}/oct/llama-3.1-minitaur-8b/20260327_202650/activations/20260328_094243/templeton_aut_object_short_eval_data_llama-3.1-minitaur-8b_20260327_202650_with_activations.json"
+    networks:
+      - name: plast_pct1
+        datapath: "${model_dir}/localizations/llama-3.1-8b-instruct/20260327_104747/localization_20260327_104747_r100-100_plast-token_u1351_pct1.json"
+      - name: pmean_pct1
+        datapath: "${model_dir}/localizations/llama-3.1-8b-instruct/20260327_104850/localization_20260327_104850_r100-100_pmean_u1351_pct1.json"
+
+  - name: qwen2.5-32b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/qwen2.5-32b-instruct/20260328_195820/activations/20260329_021116/templeton_aut_object_eval_data_qwen2.5-32b-instruct_20260328_195820_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/qwen2.5-32b-instruct/20260328_195820/activations/20260328_231646/templeton_aut_object_eval_data_qwen2.5-32b-instruct_20260328_195820_with_activations.json"
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""
+
+  - name: qwen2.5-72b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/qwen2.5-72b-instruct/20260328_200408/activations/20260329_022933/templeton_aut_object_eval_data_qwen2.5-72b-instruct_20260328_200408_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/qwen2.5-72b-instruct/20260328_200408/activations/20260329_000844/templeton_aut_object_eval_data_qwen2.5-72b-instruct_20260328_200408_with_activations.json"
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""
+
+  - name: deepseek-r1-distill-llama-8b
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/deepseek-r1-distill-llama-8b/20260328_201243/activations/20260329_023556/templeton_aut_object_eval_data_deepseek-r1-distill-llama-8b_20260328_201243_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/deepseek-r1-distill-llama-8b/20260328_201243/activations/20260329_005638/templeton_aut_object_eval_data_deepseek-r1-distill-llama-8b_20260328_201243_with_activations.json"
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""
+
+  - name: deepseek-r1-distill-llama-70b
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/deepseek-r1-distill-llama-70b/20260328_202039/activations/20260329_024315/templeton_aut_object_eval_data_deepseek-r1-distill-llama-70b_20260328_202039_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/deepseek-r1-distill-llama-70b/20260328_202039/activations/20260329_111238/templeton_aut_object_eval_data_deepseek-r1-distill-llama-70b_20260328_202039_with_activations.json"
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""
+
+  - name: falcon-40b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/falcon-40b-instruct/20260328_205805/activations/20260329_025209/templeton_aut_object_eval_data_falcon-40b-instruct_20260328_205805_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/falcon-40b-instruct/20260328_205805/activations/20260329_014035/templeton_aut_object_eval_data_falcon-40b-instruct_20260328_205805_with_activations.json"
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""
+
+  - name: qwen2.5-14b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/qwen2.5-14b-instruct/20260328_205951/activations/20260329_025721/templeton_aut_object_eval_data_qwen2.5-14b-instruct_20260328_205951_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/qwen2.5-14b-instruct/20260328_205951/activations/20260329_015930/templeton_aut_object_eval_data_qwen2.5-14b-instruct_20260328_205951_with_activations.json"
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""
+
+  - name: qwen2.5-7b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/qwen2.5-7b-instruct/20260731_211145/activations/20260731_213742/templeton_aut_object_eval_data_qwen2.5-7b-instruct_20260731_211145_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/qwen2.5-7b-instruct/20260731_211145/activations/20260731_213446/templeton_aut_object_eval_data_qwen2.5-7b-instruct_20260731_211145_with_activations.json"
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""
+
+  - name: olmo-3-7b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/olmo-3-7b-instruct/20260801_095146/activations/20260801_131247/templeton_aut_object_eval_data_olmo-3-7b-instruct_20260801_095146_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/olmo-3-7b-instruct/20260801_095146/activations/20260801_130407/templeton_aut_object_eval_data_olmo-3-7b-instruct_20260801_095146_with_activations.json"
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""
+
+  - name: qwen2.5-0.5b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/qwen2.5-0.5b-instruct/20260801_160643/activations/20260801_165556/templeton_aut_object_eval_data_qwen2.5-0.5b-instruct_20260801_160643_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/qwen2.5-0.5b-instruct/20260801_160643/activations/20260801_164342/templeton_aut_object_eval_data_qwen2.5-0.5b-instruct_20260801_160643_with_activations.json"
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""
+
+  - name: qwen2.5-1.5b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/qwen2.5-1.5b-instruct/20260801_160827/activations/20260801_165702/templeton_aut_object_eval_data_qwen2.5-1.5b-instruct_20260801_160827_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/qwen2.5-1.5b-instruct/20260801_160827/activations/20260801_164700/templeton_aut_object_eval_data_qwen2.5-1.5b-instruct_20260801_160827_with_activations.json "
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""
+
+  - name: qwen2.5-3b-instruct
+    datapaths:
+      - name: prompt
+        datapath: "${model_dir}/oct/qwen2.5-3b-instruct/20260801_161026/activations/20260801_165830/templeton_aut_object_eval_data_qwen2.5-3b-instruct_20260801_161026_with_activations.json"
+      - name: model_resp
+        datapath: "${model_dir}/oct/qwen2.5-3b-instruct/20260801_161026/activations/20260801_165207/templeton_aut_object_eval_data_qwen2.5-3b-instruct_20260801_161026_with_activations.json"
+      - name: short_prompt
+        datapath: ""
+      - name: short_model_resp
+        datapath: ""

@@ -1,0 +1,9 @@
+defaults:
+  - inference_lm
+  - gen_args@gen_args_lst.0: sampling_t0.7_p0.95
+  - gen_args@gen_args_lst.1: sampling_t0.9_p0.99
+  - gen_args@gen_args_lst.2: sampling_t0.8_k50
+  - gen_args@gen_args_lst.3: sampling_t0.75_y0.95
+  - _self_
+
+gen_args: null

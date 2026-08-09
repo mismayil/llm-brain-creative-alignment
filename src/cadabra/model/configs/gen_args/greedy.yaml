@@ -1,0 +1,11 @@
+max_new_tokens: 256
+do_sample: false
+temperature: 0.0
+top_p: 1.0
+top_k: null
+typical_p: 1.0
+min_p: null
+frequency_penalty: 0.0
+presence_penalty: 0.0
+num_samples: null
+num_inferences: 1

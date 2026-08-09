@@ -1,0 +1,8 @@
+pos_activations_path: null
+neg_activations_path: null
+output_dir: null
+percentage: 1
+localize_range: 100-100
+pooling: last-token
+num_units: null
+seed: 42

@@ -1,0 +1,6 @@
+model_path: null
+data_path: null
+batch_size: 16
+num_samples: null
+model_from_untrained: false
+prompt_only: false

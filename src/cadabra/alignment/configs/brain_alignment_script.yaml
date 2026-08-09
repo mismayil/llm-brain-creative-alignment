@@ -1,0 +1,34 @@
+defaults:
+  - alignment_data: aut
+  - _self_
+
+brain_dir: "../data/Templeton_fMRI_data"
+model_dir: "../outputs/templeton_aut"
+alignment_method: ridge_mean_voxel
+nc_thresholds:
+  - 0
+
+model_sampling:
+  - "time:-1::layer:1:"
+  - "time:mean::layer:1:"
+
+brains:
+  - "yeo_dmn"
+  - "yeo_fp"
+  - "yeo_som"
+
+models: []
+
+activation_modes:
+  - prompt
+  - model_resp
+
+model_networks:
+  - layers
+  # - plast_pct1
+  # - pmean_pct1
+
+output_path: null
+push_to_wandb: true
+wandb_project: "cadabra-alignments"
+wandb_run_name: null

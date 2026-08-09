@@ -1,0 +1,26 @@
+defaults:
+  - alignment: ridge
+  - _self_
+
+# General args
+output_dir: null
+push_to_wandb: true
+wandb_project: "cadabra-alignments"
+wandb_run_name: null
+
+# Model neural data args
+model_args:
+  model_datapath: null
+  model_data_sampling: "time:-1::layer:-1"
+  model_data_field: activations_path
+  model_network_path: null
+  model_network_type: "network"
+  model_network_ignore_first_layer: false
+
+# Brain neural data args
+brain_args:
+  brain_datapath: null
+  brain_data_sampling: "time:mean"
+  brain_data_field: fmri_path
+  noise_ceiling_path: null
+  noise_ceiling_threshold: 0.0

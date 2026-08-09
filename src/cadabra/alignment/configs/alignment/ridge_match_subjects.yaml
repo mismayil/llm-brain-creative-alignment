@@ -1,0 +1,6 @@
+defaults:
+  - ridge
+  - _self_
+
+alignment_args:
+  match_subjects: true

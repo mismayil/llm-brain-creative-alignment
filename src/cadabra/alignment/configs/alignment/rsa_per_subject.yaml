@@ -1,0 +1,4 @@
+alignment_method: "rsa_per_subject"
+
+alignment_args:
+  random_seed: 42

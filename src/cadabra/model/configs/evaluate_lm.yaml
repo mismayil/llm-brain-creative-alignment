@@ -1,0 +1,33 @@
+results_path: null
+output_dir: null
+report_usage: false
+batch_size: 8
+spacy_lang: "en_core_web_sm"
+max_n_gram: 5
+reference_model: "google/gemma-2-27b-it"
+corpus_index: "v2_dclm_all"
+num_samples: null
+
+embedding:
+  model: "jinaai/jina-embeddings-v3"
+  type: "sentence_embedding"
+  strategy: "direct"
+  distance_fn: "cosine"
+
+preprocessing:
+  lower: true
+  remove_punct: true
+  remove_stopwords: false
+  lemmatize: false
+  unique: true
+  dominant_k: null
+  remove_outliers: false
+  remove_1word_outliers_only: true
+  iqr_threshold: 1.5
+
+clustering:
+  linkage: "ward"
+  dist_threshold: 0.7
+
+wandb:
+  project: "project-cadabra-lm-evals"

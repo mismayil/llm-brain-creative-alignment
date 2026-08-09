@@ -1,0 +1,10 @@
+defaults:
+  - ridge
+  - _self_
+
+alignment_method: "linear_per_subject"
+
+alignment_args:
+  subject_sampling: false
+  num_subjects: 10
+  in_parallel: true

@@ -1,0 +1,6 @@
+defaults:
+  - sampling
+  - _self_
+
+temperature: 0.75
+typical_p: 0.95
