@@ -99,3 +99,13 @@ python -m cadabra.alignment.brain_alignment \
     model_args.model_data_sampling="time:-1::layer:1:","time:mean::layer:1:"
 ```
 Here we have specified multiple model data files and multiple model data sampling options (last-token and mean-token). Check out [aut_brain_alignment.sh](experiments/templeton_aut/aut_rsa_per_subject/generate_alignment_scripts.sh) for how to generate alignment scripts on the fly.
+
+## Citation
+```
+@article{ismayilzada2026large,
+  title={Large Language Models Align with the Human Brain during Creative Thinking},
+  author={Ismayilzada, Mete and Luchini, Simone A and Gokce, Abdulkadir and AlKhamissi, Badr and Bosselut, Antoine and Laverghetta Jr, Antonio and van der Plas, Lonneke and Beaty, Roger E},
+  journal={arXiv preprint arXiv:2604.03480},
+  year={2026}
+}
+```
