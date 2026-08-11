@@ -4,7 +4,6 @@ from dotenv import load_dotenv
 import pandas as pd
 
 from cadabra.utils import write_json, remainder_args_to_dict, convert_nan_to_none, find_files
-from cadabra.textgrid import get_transcript_from_textgrid
 
 load_dotenv()
 
@@ -79,48 +78,9 @@ def prepare_templeton_aut_data_with_subjects(input_path, **kwargs):
 
     return task_data
 
-def prepare_lebel2023_transcript_data(input_path, **kwargs):
-    textgrid_files = find_files(input_path, "TextGrid")
-    
-    task_data = []
-
-    for textgrid_path in textgrid_files:
-        textgrid_path = pathlib.Path(textgrid_path)
-        transcript = get_transcript_from_textgrid(textgrid_path)
-        task_data.append({
-            "id": f"lebel-{textgrid_path.stem}",
-            "stimuli_id": textgrid_path.stem,
-            "stimuli": transcript
-        })
-
-    return task_data
-
-def prepare_five_sent_story_data(input_path, **kwargs):
-    txt_files = find_files(input_path, "txt")
-    
-    task_data = []
-
-    for txt_path in txt_files:
-        txt_path = pathlib.Path(txt_path)
-        with open(txt_path, 'r') as f:
-            items = f.readlines()
-        
-        for line in items:
-            if line.strip():
-                item = line.strip()
-                task_data.append({
-                    "id": f"five-sent-story-item-{item}",
-                    "stimuli_id": item,
-                    "stimuli": ", ".join(item.split("-")),
-                    "semantic_dist": "high" if "high" in str(txt_path) else "low"
-                })
-    return task_data
-
 TASK_MAP = {
     "templeton_aut": prepare_templeton_aut_data,
-    "templeton_aut_with_subjects": prepare_templeton_aut_data_with_subjects,
-    "lebel2023_transcript": prepare_lebel2023_transcript_data,
-    "five_sent_story": prepare_five_sent_story_data,
+    "templeton_aut_with_subjects": prepare_templeton_aut_data_with_subjects
 }
 
 def main():
