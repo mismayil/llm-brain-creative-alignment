@@ -186,52 +186,6 @@ def prepare_templeton_aut_brain_data_from_flm(datapath, metadata_path, task="dt"
     
     return brain_data
 
-def prepare_lebel_prep_brain_data(datapath, roi="whole_brain", roi_resample=False, roi_interpolation="nearest",
-                        roi_path=None, roi_threshold=0.0, exclude_subjects=None, **kwargs):
-    """
-    Prepare final Lebel preprocessed human brain fMRI data from https://www.nature.com/articles/s41597-023-02437-z.
-    """
-    import h5py
-    print("Starting preparation of human brain fMRI data...")
-    print(f"Data directory: {datapath}")
-    print(f"Region of interest (ROI): {roi}")
-    print(f"ROI resample: {roi_resample}, Interpolation: {roi_interpolation}")
-    if roi_path:
-        print(f"Custom ROI path: {roi_path}")
-    print(f"ROI threshold: {roi_threshold}")
-
-    subjects = [d for d in os.listdir(datapath) if os.path.isdir(os.path.join(datapath, d))]
-
-    print(f"Found {len(subjects)} subjects in the dataset.")
-    print("Loading ROI mask...")
-    roi_mask = load_roi_mask(roi, roi_path=roi_path, roi_threshold=roi_threshold)
-
-    brain_data = []
-
-    if exclude_subjects:
-        subjects = [sub for sub in subjects if sub not in exclude_subjects]
-        print(f"Excluding subjects: {exclude_subjects}. Remaining subjects: {len(subjects)}")
-
-    for subject in tqdm(subjects, desc="Processing subjects", leave=False, position=0):
-        func_files = find_files(os.path.join(datapath, subject), extension="hf5")
-
-        for func_file in tqdm(func_files, desc="Processing functional files", leave=False, position=1):
-            filename = os.path.basename(func_file)
-            item = filename.split(".")[0]
-            with h5py.File(func_file, 'r') as hf:
-                data_key = list(hf.keys())[0]
-                func_data = np.array(hf[data_key])  # shape (T, V)
-                # func_data = apply_roi_mask(func_data, roi_mask, resample=roi_resample, interpolation=roi_interpolation)  # shape (T, V_roi)
-
-            brain_data.append({
-                "id": generate_hash_id(f"sub-{subject}_item-{item}_roi-{roi.replace(':', '_')}"),
-                "subject_id": subject,
-                "stimuli_id": item,
-                "fmri_data": func_data
-            })
-    
-    return brain_data
-
 def post_filter_brain_data(brain_data_or_path, exclude_subjects=None, remove_na_responses=False,
                            min_stimuli_rating=None, max_stimuli_rating=None, min_subject_rating=None, max_subject_rating=None,
                            skip_dim_mismatch_filter=False, **kwargs):
@@ -316,7 +270,6 @@ def add_rating_data(datapath, metadata_path, **kwargs):
 DATASET_MAP = {
     "templeton_aut": prepare_templeton_aut_brain_data,
     "templeton_aut_flm": prepare_templeton_aut_brain_data_from_flm,
-    "lebel_prep": prepare_lebel_prep_brain_data,
     "add_rating": add_rating_data,
 }
 
